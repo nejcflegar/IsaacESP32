@@ -3,7 +3,7 @@
 #include "ozadjeStuff.h"
 #include "ozadjeBase.h"
 #include "vrataDefault.h"
-#include "isaac.h"
+#include "isaacGlava.h"
 #include "body.h"
 
 
@@ -20,7 +20,7 @@ void setup(){
   OzadjeSpechs* OzaST = new OzadjeSpechs();
   ozadje.createSprite(238,240);
   ozadje.setSwapBytes(true);
-  ozadje.pushImage(0,0,238,240,ozadjeDefault);
+  ozadje.pushImage(0,0,238,240,ozdajeBase);
   
   IsaacBody.createSprite(32,32);
   IsaacBody.setSwapBytes(false);
@@ -30,7 +30,7 @@ void setup(){
   IsaacGlava.createSprite(32,32);
   IsaacGlava.setSwapBytes(false);
   IsaacGlava.pushImage(0,0,32,32,glava[0]);
-  IsaacGlava.pushToSprite(&ozadje,100,80,TFT_WHITE);
+  IsaacGlava.pushToSprite(&ozadje,100,80,TFT_GREEN);
 
   vrata.createSprite(20,20);
   vrata.setSwapBytes(false);
@@ -38,6 +38,7 @@ void setup(){
   vrata.pushToSprite(&ozadje,100,0,TFT_WHITE);
 
   ozadje.pushSprite(0,0);
+  tft.fillRect(150,0,32,32,TFT_GREEN);
 }
 
 void loop() {
